@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA1Kg9u5tLidSxMCdaV1XkZpD1kP9OQzOY",
+                authDomain: "eopiekun-e1437.firebaseapp.com",
+                databaseURL: "https://eopiekun-e1437.firebaseio.com",
+                projectId: "eopiekun-e1437",
+                storageBucket: "eopiekun-e1437.appspot.com",
+                messagingSenderId: "902481455117"
+            };
+            firebase.initializeApp(config);
+        </script>
+        
+        <script>
+            
+            var password = document.getElementById('password').value;
+            var checkpassword = document.getElementById('checkpassword').value;
+            
+            if (password !== checkpassword){
+                alert('Podane hasła są różne');
+            }
+            
+        </script>
+        
+        <script>
+        function handleSignUp() {
+                    var email = document.getElementById('email').value;
+                    var password = document.getElementById('password').value;
+                if (email.length < 4) {
+                    alert('Please enter an email address.');
+                    return;
+                }
+                if (password.length < 4) {
+                    alert('Please enter a password.');
+                    return;
+                }
+                
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // [START_EXCLUDE]
+                if (errorCode === 'auth/weak-password') {
+                    alert('The password is too weak.');
+                } else {
+                    alert(errorMessage);
+                }
+            console.log(error);
+            // [END_EXCLUDE]
+            });
+        }
+        </script>
+    </head>
+    <body>
+        <div>
+            *E-mail: <input id="email" name="email" type="email"> <br />
+            *Hasło: <input id="password" name="password" type="password"> <br />
+            *Powtórz hasło: <input id="checkpassword" name="checkpassword" type="password"> <br />
+            <p>Pola oznaczone gwiazdką (*) są wymagane </p>
+            <button id="rejestracja" name="rejestracja" onClick="handleSignUp();">Rejestracja</button>
+            <br />
+            <a href="index.html">Powrót na stronę główną</a>
+        </div>
+    </body>
+</html>
