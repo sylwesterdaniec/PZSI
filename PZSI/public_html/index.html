@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="CSS/mainCSS.css" rel="stylesheet" type="text/css"/>   
+            
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA1Kg9u5tLidSxMCdaV1XkZpD1kP9OQzOY",
+            authDomain: "eopiekun-e1437.firebaseapp.com",
+            databaseURL: "https://eopiekun-e1437.firebaseio.com",
+            projectId: "eopiekun-e1437",
+            storageBucket: "eopiekun-e1437.appspot.com",
+            messagingSenderId: "902481455117"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+        function toggleSignIn() {
+            if (firebase.auth().currentUser) {
+            // [START signout]
+            firebase.auth().signOut();
+            // [END signout]
+            } else {
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+                if (email.length < 4) {
+                    alert('Wprowadź adres e-mail');
+                    return;
+                }
+                if (password.length < 4) {
+                    alert('Wprowadź hasło');
+                    return;
+                }
+            // Sign in with email and pass.
+            // [START authwithemail]
+                firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // [START_EXCLUDE]
+                if (errorCode === 'auth/wrong-password') {
+                    alert('Błędne hasło');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
+                document.getElementById('logowanie').disabled = false;
+                // [END_EXCLUDE]
+                });
+                // [END authwithemail]
+            }
+        document.getElementById('logowanie').disabled = true;
+        }
+    </script>
+        
+    </head>
+    <body>
+        <div id="main">
+            <div id="menu">
+                <button name="Contact">Strona główna</button>
+                <button name="Decription">Opis</button>
+                <button name="job">Czym się zajmujemy</button>
+            </div>
+            <div id="login">
+                E-mail: <input type="text" name="email" id="email"><br/><br/>
+                Hasło: <input type="password" id="password" name="password">
+                <button disabled id="logowanie" name="logowanie" onclick="toggleSignIn();" >Zaloguj</button> <br /> <br />
+                
+                <a href="register.html">Rejestracja</a>
+            </div>
+            <div id="description">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            &copy; Daniec Sylwester &AMP; Malarczyk Tomasz
+        </div>
+    </body>
+</html>
