@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "902481455117",
+    "firebase_url": "https://eopiekun-e1437.firebaseio.com",
+    "project_id": "eopiekun-e1437",
+    "storage_bucket": "eopiekun-e1437.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902481455117:android:388b7c8f83a28ad4",
+        "android_client_info": {
+          "package_name": "com.wspa.dm.eopiekun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902481455117-eagpg9sc5do3opgr4g1hipoln71mdkua.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfu_pwTCGqap9N0rS4mUgOoJPser-7Yog"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
