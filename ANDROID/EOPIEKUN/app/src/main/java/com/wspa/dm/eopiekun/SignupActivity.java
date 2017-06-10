@@ -74,9 +74,9 @@ public class SignupActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (password != password2)
+                if (!(password.equals(password2)))
                 {
-                    Toast.makeText(getApplicationContext(), "Passwords not matching!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Passwords not matching!"+password+password2, Toast.LENGTH_SHORT).show();
                     return;
                 }
 
