@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "310194472496",
+    "firebase_url": "https://apka-d9b53.firebaseio.com",
+    "project_id": "apka-d9b53",
+    "storage_bucket": "apka-d9b53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310194472496:android:26351d57844c031d",
+        "android_client_info": {
+          "package_name": "com.example.prescot.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "310194472496-d575fo3cr2cbhb1iiufboitgvilceige.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.prescot.project",
+            "certificate_hash": "4141aad1f325f78cad2aa85427fb94fecd03890f"
+          }
+        },
+        {
+          "client_id": "310194472496-j4bbsnscin5up3762v7n1o35cth47ar2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCASJrn2kpX2zoA7g5t8nurQuE-4abH9nY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "310194472496-j4bbsnscin5up3762v7n1o35cth47ar2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
